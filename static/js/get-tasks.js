@@ -8,7 +8,7 @@ const toHTMLElement = (task) => {
     // formatting the date:
     return `
         <section class="task">
-            <a class="detail-link" href="/task/#${task.id}">
+            <a class="detail-link" href="/task-view/#${task.id}">
                 <h2>${task.name}</h2>
             </a>
         </section>
