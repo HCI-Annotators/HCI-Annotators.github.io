@@ -39,7 +39,7 @@ def annotator_task():
     return render_template('annotator-task.html')
 
 @app.route('/annotator-done/')
-def annotator_task():
+def annotator_done():
     return render_template('annotator-done.html')
 
 @app.route('/task-view/')
