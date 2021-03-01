@@ -73,12 +73,12 @@ main {
 }
 
 .input-section textarea {
-    min-height: 250px;
+    min-height: 50px;
 }
 
 .btn-main {
-    background-color: #7952b3;
-    border-color: #7952b3;
+    background-color: #023047;
+    border-color: #023047;
     color: #fff;
 }
 .btn {
@@ -100,15 +100,23 @@ main {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+a.btn {
+    color: #023047;
+}
+
+.btn.btn-main {
+    color: #fff;
+}
+
 .btn:hover, .btn:active {
     background-color: #EEE;
-    border-color: #61428f;
+    border-color: #003049;
 }
 
 .btn-main:hover, .btn-main:active, nav a:hover {
     color: #fff;
     background-color: #fb8500;
-    border-color: #61428f;
+    border-color: #fb8500;
 }
 
 .hide {

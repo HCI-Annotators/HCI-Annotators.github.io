@@ -9,24 +9,19 @@
             <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
         </nav>
         <main>
-            <h1>Select your role</h1>
-
-            <div class="card">
-              <div class="container">
-                <h4><b>Annotator</b></h4>
-                <p>You have been tasked with makring stuff on the images...</p>
-                <a href="/annotator-login/">Click here</a>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="container">
-                <h4><b>Manager</b></h4>
-                <p>You have images that you want to annotate...</p>
-                <a href="/manager-view/">Click here</a>
-              </div>
-            </div>
-
+            <h1>Add New Task</h1>
+            <form id="post-form">
+                <div class="input-section">
+                    <label for="title">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="input-section">
+                    <label for="content">Description</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <button class="btn btn-main" id="save" type="submit">Save</button>
+                <a class="btn" href="/manager-view/">Cancel</a>
+            </form>
         </main>
     </body>
 </html>
