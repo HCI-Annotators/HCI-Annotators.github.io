@@ -23,6 +23,13 @@ const updateTask = (ev) => {
     ev.preventDefault();
 };
 
+const deleteTask = (id) => {
+    fetch('/api/tasks/'+ id + '/', {
+        method: 'DELETE'
+    }).then(response => response.json())
+    .then();
+};
+
 const getTask = () => {
     const url = window.location.href;
     id = url.substring(url.lastIndexOf('#') + 1);
@@ -51,4 +58,4 @@ const showConfirmation = (data) => {
 };
 
 getTask();
-//document.querySelector('#save').onclick = createTask;
+document.querySelector('#save').onclick = updateTask;
