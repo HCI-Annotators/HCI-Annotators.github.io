@@ -10,7 +10,7 @@ from flask_cors import CORS
 from flask_restful import Api
 
 import db
-from views import posts, comments
+from views import tasks
 
 app = Flask(__name__)
 CORS(app)
@@ -22,17 +22,20 @@ api = Api(app)
 def home():
     return render_template('home.html')
 
-@app.route('/add-post/')
-def create_post():
-    return render_template('create-post.html')
+@app.route('/manager-view/')
+def manager_view():
+    return render_template('manager-view.html')
 
-@app.route('/post/')
-def get_single_post():
-    return render_template('post-detail.html')
+#@app.route('/add-post/')
+#def create_post():
+#    return render_template('create-post.html')
+#
+#@app.route('/post/')
+#def get_single_post():
+#    return render_template('post-detail.html')
 
 # routes from other files:
-posts.initialize_routes(api)
-comments.initialize_routes(api)
+tasks.initialize_routes(api)
 
 
 if __name__ == "__main__":
