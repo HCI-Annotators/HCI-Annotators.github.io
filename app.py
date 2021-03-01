@@ -26,6 +26,22 @@ def home():
 def manager_view():
     return render_template('manager-view.html')
 
+@app.route('/manager-login/')
+def manager_login():
+    return render_template('manager-login.html')
+
+@app.route('/annotator-login/')
+def annotator_login():
+    return render_template('annotator-login.html')
+
+@app.route('/task-view/')
+def task_view():
+    return render_template('task-view.html')
+
+@app.route('/task-add/')
+def task_add():
+    return render_template('task-add.html')
+
 #@app.route('/add-post/')
 #def create_post():
 #    return render_template('create-post.html')
