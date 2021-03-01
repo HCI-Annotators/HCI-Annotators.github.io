@@ -65,7 +65,7 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 .submit {
-  cursor: pointer;
+    cursor: pointer;
     border-radius: 5em;
     color: #fff;
     background: #023047;
@@ -78,6 +78,10 @@ font-family: 'Ubuntu', sans-serif;
     margin-left: 35%;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.submit:hover {
+  background-color: #fb8500;
 }
 
 .forgot {
