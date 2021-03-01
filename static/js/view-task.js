@@ -17,7 +17,7 @@ const updateTask = (ev) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(showConfirmation);
+        .then(() => {window.location.href = "/manager-view/";});
 
     // this line overrides the default form functionality:
     ev.preventDefault();
