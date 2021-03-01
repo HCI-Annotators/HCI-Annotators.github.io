@@ -32,9 +32,8 @@ class TaskDetailEndpoint(Resource):
         task = models.Task.objects.get(id=id)
         request_data = request.get_json()
         task.name = request_data.get('name')
-        task.author = request_data.get('author')
         task.description = request_data.get('description')
-        task.num_images = request_data.get('num_images')
+        task.instructions = request_data.get('instructions')
         task.save()
         return Response(task.to_json(), mimetype="application/json", status=200)
 

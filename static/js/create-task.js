@@ -2,6 +2,7 @@ const createTask = (ev) => {
     const data = {
         name: document.querySelector('#name').value,
         description: document.querySelector('#description').value,
+        instructions: document.querySelector('#instructions').value,
     };
     fetch('/api/tasks', {
             method: 'POST',
