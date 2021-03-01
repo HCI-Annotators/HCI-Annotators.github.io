@@ -42,7 +42,7 @@ class TaskDetailEndpoint(Resource):
         task = models.Task.objects.get(id=id)
         task.delete()
         serialized_data = {
-            'message': 'Comment {0} successfully deleted.'.format(id)
+            'message': 'Task {0} successfully deleted.'.format(id)
         }
         return Response(json.dumps(serialized_data), mimetype="application/json", status=200)
 
