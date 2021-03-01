@@ -23,7 +23,7 @@ class TaskListEndpoint(Resource):
         task = models.Task(**body).save()
         serialized_data = {
             'id': str(task.id),
-            'message': 'Comment {0} successfully created.'.format(comment.id)
+            'message': 'Comment {0} successfully created.'.format(task.id)
         }
         return Response(json.dumps(serialized_data), mimetype="application/json", status=201)
 
