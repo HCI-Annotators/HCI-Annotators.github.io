@@ -23,11 +23,13 @@ const updateTask = (ev) => {
     ev.preventDefault();
 };
 
-const deleteTask = (id) => {
-    fetch('/api/tasks/'+ id + '/', {
+const deleteTask = () => {
+    const url = window.location.href;
+    id = url.substring(url.lastIndexOf('#') + 1);
+
+    fetch('/api/tasks/'+ activeTask._id.$oid + '/', {
         method: 'DELETE'
-    }).then(response => response.json())
-    .then();
+    }).then(() => {window.location.href = "/manager-view/";});
 };
 
 const getTask = () => {
@@ -59,3 +61,4 @@ const showConfirmation = (data) => {
 
 getTask();
 document.querySelector('#save').onclick = updateTask;
+document.querySelector('#delete').onclick = deleteTask;
