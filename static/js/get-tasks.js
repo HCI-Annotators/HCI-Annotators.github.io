@@ -1,4 +1,4 @@
-const getPosts = () => {
+const getTasks = () => {
     fetch('/api/tasks')
         .then(response => response.json())
         .then(displayTasks);

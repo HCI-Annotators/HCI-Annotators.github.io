@@ -49,16 +49,13 @@ class Comment(Document):
         return json.dumps(self.to_dict())
 
 class Task(Document):
-    author = StringField(required=True)
     name = StringField(required=True)
     description = StringField(required=True)
-    num_images = IntField(required=True)
 
     def to_dict(self, path=None):
         d = {
             "id": str(self.pk),
             "name": self.name,
-            "author": self.author,
             "description": self.description,
         }
         if path:
