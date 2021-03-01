@@ -10,7 +10,7 @@
         </nav>
         <main>
             <h1>Add New Task</h1>
-            <form id="post-form">
+            <form id="task-form">
                 <div class="input-section">
                     <label for="title">Name</label>
                     <input type="text" name="name" id="name">
@@ -22,6 +22,12 @@
                 <button class="btn btn-main" id="save" type="submit">Save</button>
                 <a class="btn" href="/manager-view/">Cancel</a>
             </form>
+            <section id="confirmation" class="hide">
+                <p>
+                    Your task was successfully added. <a href="/manager-view/">Check it out</a>.
+                </p>
+            </section>
         </main>
+        <script type="text/javascript" src="/static/js/create-task.js"></script>
     </body>
 </html>

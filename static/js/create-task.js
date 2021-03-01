@@ -17,4 +17,12 @@ const createTask = (ev) => {
     ev.preventDefault();
 };
 
-document.querySelector('#save').onclick = createPost;
+const showConfirmation = (data) => {
+    console.log('response from the server:', data);
+    if (data.message && data.id) {
+        document.querySelector('#task-form').classList.toggle("hide");
+        document.querySelector('#confirmation').classList.toggle("hide");
+    }
+};
+
+document.querySelector('#save').onclick = createTask;
