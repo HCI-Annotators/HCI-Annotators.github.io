@@ -34,6 +34,14 @@ def manager_login():
 def annotator_login():
     return render_template('annotator-login.html')
 
+@app.route('/annotator-task/')
+def annotator_task():
+    return render_template('annotator-task.html')
+
+@app.route('/annotator-done/')
+def annotator_task():
+    return render_template('annotator-done.html')
+
 @app.route('/task-view/')
 def task_view():
     return render_template('task-view.html')
