@@ -2,7 +2,7 @@ import datetime
 import json
 
 from mongoengine import \
-    Document, StringField, DateTimeField, ReferenceField, ListField, CASCADE
+    Document, StringField, DateTimeField, ReferenceField, ListField, CASCADE, IntField
 
 class Post(Document):
     title = StringField(required=True, max_length=200)
@@ -44,9 +44,29 @@ class Comment(Document):
                 'url': server_url
             })
         return d
-    
+
     def to_json(self, path=None):
         return json.dumps(self.to_dict())
+
+class Task(Document):
+    author = StringField(required=True)
+    name = StringField(required=True)
+    description = StringField(required=True)
+    num_images = IntField(required=True)
+
+    def to_dict(self, path=None):
+        d = {
+            "id": str(self.pk),
+            "name": self.name,
+            "author": self.author,
+            "description": self.description,
+        }
+        if path:
+            server_url = path + str(self.pk) + '/'
+            d.update({
+                'url': server_url
+            })
+        return d
 
 # from .db import db
 
@@ -54,4 +74,3 @@ class Comment(Document):
 #     name = StringField(required=True, unique=True)
 #     casts = ListField(StringField(), required=True)
 #     genres =ListField(StringField(), required=True)
-        

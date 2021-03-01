@@ -19,8 +19,8 @@ api = Api(app)
 
 # connect your routes to your app:
 @app.route('/')
-def list_posts():
-    return render_template('get-posts.html')
+def home():
+    return render_template('home.html')
 
 @app.route('/add-post/')
 def create_post():
