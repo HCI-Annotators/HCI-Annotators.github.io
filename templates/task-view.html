@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Home</title>
+        <title>Task</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
@@ -9,24 +9,24 @@
             <a class="nav-link" href="/manager-view/"><i class="fas fa-home"></i> Home</a>
         </nav>
         <main>
-            <h1>Select your role</h1>
-
-            <div class="card">
-              <div class="container">
-                <h4><b>Annotator</b></h4>
-                <p>You have been tasked with makring stuff on the images...</p>
-                <a href="/annotator-login/">Click here</a>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="container">
-                <h4><b>Manager</b></h4>
-                <p>You have images that you want to annotate...</p>
-                <a href="/manager-view/">Click here</a>
-              </div>
-            </div>
-
+            <h1 id="id">Task ID</h1>
+            <form id="task-form">
+                <div class="input-section">
+                    <label for="title">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="input-section">
+                    <label for="content">Description</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <div class="input-section">
+                    <label for="content">Instructions for Annotators</label>
+                    <textarea name="description" id="instructions"></textarea>
+                </div>
+                <button class="btn btn-main" id="save" type="submit">Save</button>
+                <a class="btn" href="/manager-view/">Cancel</a>
+            </form>
         </main>
+        <script type="text/javascript" src="/static/js/view-task.js"></script>
     </body>
 </html>
