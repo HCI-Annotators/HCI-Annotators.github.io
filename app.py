@@ -55,21 +55,16 @@ def task_add():
 # def upload_file():
 #    return render_template('upload.html')
 
-@app.route('/annotator')
-def tagger():
-    if (app.config["HEAD"] == len(app.config["FILES"])):
-        return redirect(url_for('bye'))
-    directory = app.config['IMAGES']
-    image = app.config["FILES"][app.config["HEAD"]]
-    labels = app.config["LABELS"]
-    not_end = not(app.config["HEAD"] == len(app.config["FILES"]) - 1)
-    print(not_end)
-    return render_template('annotator1.html')
-
-@app.route("/bye")
-def bye():
-    print("done")
-    # return send_file("taf.gif", mimetype='image/gif')
+@app.route('/annotator/')
+def annotator():
+    # if (app.config["HEAD"] == len(app.config["FILES"])):
+    #     return redirect(url_for('bye'))
+    # directory = app.config['IMAGES']
+    # image = app.config["FILES"][app.config["HEAD"]]
+    # labels = app.config["LABELS"]
+    # not_end = not(app.config["HEAD"] == len(app.config["FILES"]) - 1)
+    # print(not_end)
+    return render_template('annotator.html')
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload():
@@ -91,8 +86,7 @@ if __name__ == '__main__':
 # routes from other files:
 tasks.initialize_routes(api)
 
-
 if __name__ == "__main__":
     print('running!')
-    app.config["LABELS"] = []
+    # app.config["LABELS"] = []
     app.run(debug=True)
