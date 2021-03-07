@@ -8,6 +8,7 @@ const updateTask = (ev) => {
         name: document.querySelector('#name').value,
         description: document.querySelector('#description').value,
         instructions: document.querySelector('#instructions').value,
+        s3_link: document.querySelector('#s3_link').value,
     };
     fetch('/api/tasks/' + id + '/', {
             method: 'PUT',
@@ -49,6 +50,7 @@ const renderTask = (ev) => {
     document.querySelector('#name').value = activeTask.name;
     document.querySelector('#description').value = activeTask.description;
     document.querySelector('#instructions').value = activeTask.instructions;
+    document.querySelector('#s3_link').value = activeTask.s3_link;
 }
 
 const showConfirmation = (data) => {
