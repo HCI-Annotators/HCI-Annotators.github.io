@@ -23,6 +23,12 @@
                     <label for="content">Instructions for Annotators</label>
                     <textarea name="description" id="instructions"></textarea>
                 </div>
+                <div>
+                    <form method="POST" enctype="multipart/form-data" action="/upload">
+                        <input type="file" name="file[]" multiple="">
+                        <!-- <input type="submit" value="submit"> -->
+                    </form>
+                </div>
                 <button class="btn btn-main" id="save" type="submit">Save</button>
                 <a class="btn" href="/manager-view/">Cancel</a>
             </form>

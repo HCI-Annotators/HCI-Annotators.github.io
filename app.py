@@ -8,6 +8,7 @@ from flask import Flask, request, Response
 from flask import render_template
 from flask_cors import CORS
 from flask_restful import Api
+from flask import send_file
 
 import db
 from views import tasks
@@ -50,6 +51,35 @@ def task_view():
 def task_add():
     return render_template('task-add.html')
 
+# @app.route('/upload')
+# def upload_file():
+#    return render_template('upload.html')
+
+@app.route('/annotator')
+def tagger():
+    if (app.config["HEAD"] == len(app.config["FILES"])):
+        return redirect(url_for('bye'))
+    directory = app.config['IMAGES']
+    image = app.config["FILES"][app.config["HEAD"]]
+    labels = app.config["LABELS"]
+    not_end = not(app.config["HEAD"] == len(app.config["FILES"]) - 1)
+    print(not_end)
+    return render_template('annotator1.html')
+
+@app.route("/bye")
+def bye():
+    print("done")
+    # return send_file("taf.gif", mimetype='image/gif')
+
+@app.route('/upload', methods = ['GET', 'POST'])
+def upload():
+    uploaded_files = flask.request.files.getlist("file[]")
+    print(uploaded_files)
+    return 'file uploaded successfully'
+		
+if __name__ == '__main__':
+   app.run(debug = True)
+
 #@app.route('/add-post/')
 #def create_post():
 #    return render_template('create-post.html')
@@ -64,4 +94,5 @@ tasks.initialize_routes(api)
 
 if __name__ == "__main__":
     print('running!')
+    app.config["LABELS"] = []
     app.run(debug=True)
