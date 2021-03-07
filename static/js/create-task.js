@@ -3,6 +3,7 @@ const createTask = (ev) => {
         name: document.querySelector('#name').value,
         description: document.querySelector('#description').value,
         instructions: document.querySelector('#instructions').value,
+        s3_link: document.querySelector('#s3_link').value,
     };
     fetch('/api/tasks', {
             method: 'POST',

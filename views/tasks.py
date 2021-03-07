@@ -34,6 +34,7 @@ class TaskDetailEndpoint(Resource):
         task.name = request_data.get('name')
         task.description = request_data.get('description')
         task.instructions = request_data.get('instructions')
+        task.s3_link = request_data.get('s3_link')
         task.save()
         return Response(task.to_json(), mimetype="application/json", status=200)
 
