@@ -3,30 +3,34 @@
         <title>Home</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/annotorious.min.css">
     </head>
     <body>
         <nav>
-            <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+          <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
         </nav>
         <main>
-            <h1>Select your role</h1>
+            <h1>Highlight image</h1>
 
-            <div class="card">
-              <div class="container">
-                <h4><b>Annotator</b></h4>
-                <p>You have been tasked with makring stuff on the images...</p>
-                <a href="/annotator-login/">Click here</a>
-              </div>
+            <h3 id="instructions">Insert your explanation here</h3>
+
+            <hr>
+            <div id="content">
+              <img id="hallstatt" src="/static/images/640px-Hallstatt.jpg">
             </div>
+            <hr>
 
-            <div class="card">
-              <div class="container">
-                <h4><b>Manager</b></h4>
-                <p>You have images that you want to annotate...</p>
-                <a href="/manager-view/">Click here</a>
-              </div>
-            </div>
-
+            <button class="btn btn-main" id="next" type="submit">Next</button>
+            <a class="btn" id="previous">Previous</a>
+            <a class="btn" href="/annotator-done/">Finish</a>
         </main>
     </body>
+    <script type="text/javascript" src="/static/js/annotorious.min.js"></script>
+    <script>
+      var anno = Annotorious.init({
+        image: "hallstatt",
+      });
+      anno.loadAnnotations("/static/json/annotations.w3c.json");
+    </script>
+    <script type="text/javascript" src="/static/js/annotator-task.js"></script>
 </html>
