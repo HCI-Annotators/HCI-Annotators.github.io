@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
@@ -8,10 +9,10 @@
         <nav>
             <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
         </nav>
-        <main>
-            <h1>Select your role</h1>
+        <main class="container">
+            <!-- <h1>Select your role</h1>
 
-            <div class="card">
+            <div class="card col-md-6">
               <div class="container">
                 <h4><b>Annotator</b></h4>
                 <p>You have been tasked with makring stuff on the images...</p>
@@ -19,14 +20,37 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card col-md-6">
               <div class="container">
                 <h4><b>Manager</b></h4>
                 <p>You have images that you want to annotate...</p>
                 <a href="/manager-login/">Click here</a>
               </div>
+            </div> -->
+            <h1 class="display-4" style="text-align: center">Welcome to Arrow</h1>
+            <br>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card card-left">
+                  <div class="card-body">
+                    <h4 class="card-title">Do you have data?</h4>
+                    <br>
+                    <p class="card-text">If you want your data labelled, click below to create tasks for your annotators</p>
+                    <a href="/manager-login/" class="btn btn-primary" style="margin: 30px 0px 0px 0px">I am a manager</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card card-right">
+                  <div class="card-body">
+                    <h4 class="card-title">Are you looking for a job?</h4>
+                    <br>
+                    <p class="card-text">Click below to pick up an annotating task and get paid while doing it</p>
+                    <a href="/annotator-login/" class="btn btn-primary" style="margin: 30px 0px 0px 0px">I am an annotator</a>
+                  </div>
+                </div>
+              </div>
             </div>
-
         </main>
     </body>
 </html>

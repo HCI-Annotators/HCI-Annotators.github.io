@@ -148,9 +148,38 @@ h2 {
 /* This is card specification */
 .card {
   /* Add shadows to create the "card" effect */
+  /* border-radius: 8pt;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  transition: 0.3s; */
+  height: 110%;
+  width: 70%;
 }
+
+.card-left {
+    /* Add shadows to create the "card" effect */
+    /* border-radius: 8pt;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; */
+    float: right;
+    margin-right: 10%;
+}
+  
+  .card-right {
+    /* Add shadows to create the "card" effect */
+    /* border-radius: 8pt;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; */
+    float: left;
+    margin-left: 10%;
+  }
+
+.card-body {
+    /* Add shadows to create the "card" effect */
+    /* border-radius: 8pt;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; */
+    height: 120%;
+  }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
@@ -159,5 +188,5 @@ h2 {
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+  padding: 10% 0%;
 }
